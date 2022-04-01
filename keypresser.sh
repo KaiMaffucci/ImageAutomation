@@ -25,7 +25,9 @@ xdotool key Return
 
 # confirm devices
 sleep 3
-xdotool key ctrl key c
+xdotool key ctrl+c
+sleep 12
+# +3
 
 # sdb1
 sleep 3
@@ -34,8 +36,8 @@ sleep 3
 xdotool key Down
 sleep 3
 xdotool key Down
-sleep 3
-xdotool key Down
+#sleep 3
+#xdotool key Down
 sleep 3
 xdotool key Return
 
