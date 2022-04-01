@@ -36,8 +36,8 @@ sleep 3
 xdotool key Down
 sleep 3
 xdotool key Down
-#sleep 3
-#xdotool key Down
+sleep 3
+xdotool key Down
 sleep 3
 xdotool key Return
 
