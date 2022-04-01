@@ -51,6 +51,9 @@ xdotool key Tab
 sleep 3
 xdotool key Return
 
+sleep 3
+xdotool key Return
+
 # beginner
 sleep 3
 xdotool key Return
