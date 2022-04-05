@@ -18,6 +18,7 @@ xterm -n usb_wait -e usb_wait.sh
 while [ -n "$(pidof xterm)" ]; do
   sleep 1
 done
+sleep 10
 
 # keep going with usb plugged in
 sleep 3
@@ -30,43 +31,46 @@ sleep 12
 # +3
 
 # sdb1
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Return
 
 # save image
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Tab
-sleep 3
+sleep 1
 xdotool key Tab
-sleep 3
+sleep 1
 xdotool key Return
 
+# what's this again?
 sleep 3
 xdotool key Return
 
 # beginner
-sleep 3
+sleep 1
 xdotool key Return
 
 # restoredisk
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Return
 
 # TODO if it matters: input proper image name
+#sleep 3
+#xdotool key Return
 
 # select source disk
 sleep 3
@@ -76,7 +80,7 @@ xdotool key Return
 
 # skip file repair check TODO: make it a flag/option
 sleep 3
-xdotool key Return
+xdotool key Down
 sleep 3
 xdotool key Return
 
