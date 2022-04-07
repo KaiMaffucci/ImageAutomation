@@ -15,10 +15,18 @@ xdotool key Return
 sleep 1
 xterm -n usb_wait -e usb_wait.sh
 
-while [ -n "$(pidof xterm)" ]; do
+#while [ -n "$(pidof xterm)" ]; do
+#  sleep 1
+#done
+#sleep 10
+
+# waits for USB to be plugged in, then proceeds automatically
+# TODO: need to change while statement condition command to just get sdb1, or just fix it in general, bc something's wrong
+lsblk > lsblkout.txt 2>&1
+while [ ! "$(grep -q sdb1 lsblkout.txt)" ]; do
   sleep 1
+  lsblk > lsblkout.txt 2>&1
 done
-sleep 10
 
 # keep going with usb plugged in
 sleep 3
@@ -27,8 +35,7 @@ xdotool key Return
 # confirm devices
 sleep 3
 xdotool key ctrl+c
-sleep 12
-# +3
+sleep 15
 
 # sdb1
 sleep 1
@@ -43,7 +50,7 @@ sleep 1
 xdotool key Return
 
 # save image
-sleep 1
+sleep 3
 xdotool key Down
 sleep 1
 xdotool key Tab
@@ -69,45 +76,46 @@ sleep 1
 xdotool key Return
 
 # TODO if it matters: input proper image name
-#sleep 3
-#xdotool key Return
 
 # select source disk
-sleep 3
+sleep 1
 xdotool key Return
-sleep 3
+sleep 1
 xdotool key Return
 
 # skip file repair check TODO: make it a flag/option
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Return
 
 # shutdown clonezilla TODO: is this the best option? also is it even relevant in the same way anymore?
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Down
-sleep 3
+sleep 1
 xdotool key Return
 
 # starts cloning
-sleep 3
+sleep 1
 xdotool key Return
-sleep 3
+sleep 1
 xdotool key Return
-sleep 3
+sleep 1
 xdotool key y
-sleep 3
+sleep 1
 xdotool key Return
-sleep 3
+sleep 1
 xdotool key y
-sleep 3
+sleep 1
 xdotool key Return
 
-# TODO: wait until it's done - wait command maybe?
+# wait until it's done
+# TODO: figure out a way to not have to hard-code the timing like this?!
+sleep 600
 
 # after cloning
-sleep 3
 xdotool key Return
+sleep 1
+sudo reboot
