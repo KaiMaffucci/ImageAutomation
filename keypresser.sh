@@ -13,7 +13,7 @@ xdotool key Return
 
 # wait for usb to be plugged in
 sleep 1
-xterm -n usb_wait -e usb_wait.sh
+#xterm -n usb_wait -e usb_wait.sh
 
 #while [ -n "$(pidof xterm)" ]; do
 #  sleep 1
@@ -21,11 +21,13 @@ xterm -n usb_wait -e usb_wait.sh
 #sleep 10
 
 # waits for USB to be plugged in, then proceeds automatically
-# TODO: need to change while statement condition command to just get sdb1, or just fix it in general, bc something's wrong
+# TODO: fix
 lsblk > lsblkout.txt 2>&1
-while [ ! "$(grep -q sdb1 lsblkout.txt)" ]; do
+grepout=$(grep -oh "\w*sdb1\w*" lsblkout.txt)
+while [[ ! "$grepout" == *"sdb1"* ]]; do
   sleep 1
   lsblk > lsblkout.txt 2>&1
+  grepout=$(grep -oh "\w*sdb1\w*" lsblkout.txt)
 done
 
 # keep going with usb plugged in
