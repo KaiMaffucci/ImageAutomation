@@ -53,15 +53,15 @@ xdotool key Return
 
 # save image
 sleep 3
-xdotool key Down
-sleep 1
+#xdotool key Down
+#sleep 1
 xdotool key Tab
 sleep 1
 xdotool key Tab
 sleep 1
 xdotool key Return
 
-# what's this again?
+# clonezilla displays dine system disk space usage, press enter to continue
 sleep 3
 xdotool key Return
 
@@ -78,10 +78,10 @@ sleep 1
 xdotool key Return
 
 # TODO if it matters: input proper image name
-
-# select source disk
 sleep 1
 xdotool key Return
+
+# select source disk
 sleep 1
 xdotool key Return
 
@@ -91,7 +91,7 @@ xdotool key Down
 sleep 1
 xdotool key Return
 
-# shutdown clonezilla TODO: is this the best option? also is it even relevant in the same way anymore?
+# shutdown clonezilla
 sleep 1
 xdotool key Down
 sleep 1
@@ -104,7 +104,7 @@ sleep 1
 xdotool key Return
 sleep 1
 xdotool key Return
-sleep 1
+sleep 10
 xdotool key y
 sleep 1
 xdotool key Return
