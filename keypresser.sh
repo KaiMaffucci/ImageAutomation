@@ -10,15 +10,7 @@ xdotool key Return
 # local_dev
 sleep 1
 xdotool key Return
-
-# wait for usb to be plugged in
 sleep 1
-#xterm -n usb_wait -e usb_wait.sh
-
-#while [ -n "$(pidof xterm)" ]; do
-#  sleep 1
-#done
-#sleep 10
 
 # waits for USB to be plugged in, then proceeds automatically
 # TODO: fix
@@ -37,7 +29,7 @@ xdotool key Return
 # confirm devices
 sleep 3
 xdotool key ctrl+c
-sleep 15
+sleep 16
 
 # sdb1
 sleep 1
@@ -53,15 +45,13 @@ xdotool key Return
 
 # save image
 sleep 3
-#xdotool key Down
-#sleep 1
 xdotool key Tab
 sleep 1
 xdotool key Tab
 sleep 1
 xdotool key Return
 
-# clonezilla displays dine system disk space usage, press enter to continue
+# clonezilla displays system disk space usage, press enter to continue
 sleep 3
 xdotool key Return
 
@@ -82,7 +72,7 @@ sleep 1
 xdotool key Return
 
 # select source disk
-sleep 1
+sleep 4
 xdotool key Return
 
 # skip file repair check TODO: make it a flag/option
