@@ -1,4 +1,4 @@
-A collection of scripts built to make the imaging process at my high school. Part of an in-school internship program. 
+A collection of scripts built to make the imaging process at my high school easier. Part of an in-school internship program. 
 
 HOW TO USE (1st-time setup):
 1. Create a folder in the partedmagic USB drive named "IA" (without the quotes). Make sure it is not inside of any sub-folders! 
