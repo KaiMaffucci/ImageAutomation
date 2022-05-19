@@ -68,7 +68,7 @@ sleep 1
 xdotool key Return
 
 # TODO if it matters: input proper image name
-sleep 1
+sleep 4
 xdotool key Return
 
 # select source disk
